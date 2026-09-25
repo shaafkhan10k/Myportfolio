@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Antigravity from '../../components/Antigravity/Antigravity';
 import Lanyard from '../../components/Lanyard/Lanyard';
 import TextLoop from '../../components/TextLoop/TextLoop';
+import SocialLinks from '../../components/SocialLinks';
 import './About.css';
 
 interface InfoCardProps {
@@ -19,7 +20,7 @@ function InfoCard({ label, tag, children, fullWidth = false }: InfoCardProps) {
     <div className={`integration-card z-10 rounded-2xl pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative anime-element ${fullWidth ? 'full-width' : ''}`}
       style={{ background: 'radial-gradient(circle 230px at 0% 0%, rgba(113, 113, 122, 0.4), #0c0d0d)' }}>
       <div
-        className="hover:bg-white/10 transition-all duration-300 group z-[1] bg-white/5 h-full rounded-2xl p-8 relative backdrop-blur overflow-hidden"
+        className="hover:bg-white/10 transition-all duration-300 group z-[1] bg-white/5 h-full rounded-2xl p-5 sm:p-8 relative backdrop-blur overflow-hidden"
         style={{ background: 'radial-gradient(circle 280px at 0% 0%, rgba(68, 68, 68, 0.3), #0c0d0d)', border: '1px solid #202222' }}>
         
         <div className="animated-dot bg-zinc-400 w-[5px] h-[5px] z-[2] rounded-full absolute"
@@ -96,7 +97,7 @@ export default function About() {
           ringRadius={9}
           waveSpeed={0.4}
           waveAmplitude={1}
-          particleSize={1.5}
+          particleSize={0.6}
           lerpSpeed={0.05}
           color="#ffffff"
           autoAnimate
@@ -208,26 +209,32 @@ export default function About() {
           </div>
         </div>
 
-        {/* ── TextLoop Wave Banner ── */}
-        <div className="about-textloop-section anime-element">
-          <TextLoop
-            text="AI Engineer ✦ 3D Creator ✦ Automation ✦ Shaaf"
-            shape="wave"
-            speed={80}
-            direction="forward"
-            separator="✦"
-            curviness={60}
-            fontSize={42}
-            fontWeight={800}
-            letterSpacing={3}
-            uppercase
-            color="#D7E2EA"
-            ribbon
-            ribbonColor="#141822"
-            ribbonWidth={90}
-            pauseOnHover={false}
-          />
-        </div>
+      </div>
+
+      {/* ── TextLoop Wave Banner ── */}
+      <div className="about-textloop-section anime-element">
+        <TextLoop
+          text="AI Engineer ✦ 3D Creator ✦ Automation ✦ Shaaf"
+          shape="wave"
+          speed={80}
+          direction="forward"
+          separator="✦"
+          curviness={60}
+          fontSize={42}
+          fontWeight={800}
+          letterSpacing={3}
+          uppercase
+          color="#D7E2EA"
+          ribbon
+          ribbonColor="#141822"
+          ribbonWidth={90}
+          pauseOnHover={false}
+        />
+      </div>
+
+      {/* Social Links */}
+      <div className="flex justify-center py-12">
+        <SocialLinks iconSize={22} className="gap-8 sm:gap-12" />
       </div>
     </div>
   );

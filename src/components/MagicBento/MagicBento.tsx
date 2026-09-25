@@ -506,7 +506,8 @@ const MagicBento = ({
 }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
-  const shouldDisableAnimations = disableAnimations || isMobile;
+  // Don't completely disable animations on mobile to support touch animations!
+  const shouldDisableAnimations = disableAnimations;
   const activeCards = cards ?? cardData;
 
   return (

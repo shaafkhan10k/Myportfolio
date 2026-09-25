@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
+import SocialLinks from '../../components/SocialLinks';
 import './Contact.css';
 
 export default function Contact() {
@@ -161,6 +162,11 @@ export default function Contact() {
               <span>Send Message</span>
             </button>
           </form>
+        </div>
+
+        {/* Social Links below form */}
+        <div className="flex justify-center mt-12 pb-8">
+          <SocialLinks iconSize={24} className="gap-8 sm:gap-10" />
         </div>
       </div>
     </div>
