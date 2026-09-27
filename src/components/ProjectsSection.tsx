@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GitHubButton from './LiveProjectButton';
-import SocialLinks from './SocialLinks';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -229,10 +228,7 @@ export default function ProjectsSection() {
       {/* Extra scroll space so last card stays visible */}
       <div style={{ height: '40vh' }} />
 
-      {/* Social Links */}
-      <div className="flex justify-center pb-20">
-        <SocialLinks iconSize={22} />
-      </div>
+   
     </section>
   );
 }

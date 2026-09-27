@@ -4,7 +4,7 @@ import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
 import MagicBento, { BentoCardItem } from '../../components/MagicBento/MagicBento';
 import './Skills.css';
-
+import SocialLinks from '../../components/SocialLinks';
 const skillCards: BentoCardItem[] = [
   {
     label: 'Game AI & RL',
@@ -64,7 +64,7 @@ export default function Skills() {
           Leveraging cutting-edge technology to craft intelligent and unforgettable digital experiences.
         </p>
 
-        <div className="skills-bento-wrapper opacity-0">
+                <div className="skills-bento-wrapper opacity-0">
           <MagicBento
             cards={skillCards}
             textAutoHide={false}
@@ -78,6 +78,10 @@ export default function Skills() {
             particleCount={12}
             glowColor="132, 0, 255"
           />
+        </div>
+
+        <div className="flex justify-center mt-16 pb-4">
+          <SocialLinks iconSize={22} />
         </div>
       </div>
     </div>

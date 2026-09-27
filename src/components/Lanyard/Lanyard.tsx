@@ -139,43 +139,55 @@ function Band({
     const frontTex = useTexture(frontImage || BLANK_PIXEL) as THREE.Texture;
     const backTex = useTexture(backImage || BLANK_PIXEL) as THREE.Texture;
 
-    const cardMap = useMemo(() => {
-        const baseMap = materials.base.map;
-        if (!frontImage && !backImage) return baseMap;
-        const baseImg = baseMap.image;
-        const W = baseImg.width;
-        const H = baseImg.height;
-        const canvas = document.createElement('canvas');
-        canvas.width = W;
-        canvas.height = H;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return baseMap;
-        ctx.drawImage(baseImg, 0, 0, W, H);
+  const cardMap = useMemo(() => {
+    const baseMap = materials.base.map;
+    const baseImg = baseMap.image;
+    const W = baseImg.width;
+    const H = baseImg.height;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return baseMap;
+    ctx.drawImage(baseImg, 0, 0, W, H);
 
-        const drawFitted = (img: HTMLImageElement, rect: typeof FRONT_UV_RECT) => {
-            const rx = rect.x * W, ry = rect.y * H, rw = rect.w * W, rh = rect.h * H;
-            const pick = imageFit === 'contain' ? Math.min : Math.max;
-            const scale = pick(rw / img.width, rh / img.height);
-            const dw = img.width * scale, dh = img.height * scale;
-            const dx = rx + (rw - dw) / 2, dy = ry + (rh - dh) / 2;
-            ctx.save();
-            ctx.beginPath();
-            ctx.rect(rx, ry, rw, rh);
-            ctx.clip();
-            ctx.drawImage(img, dx, dy, dw, dh);
-            ctx.restore();
-        };
+    const drawFitted = (img: HTMLImageElement, rect: typeof FRONT_UV_RECT) => {
+        const rx = rect.x * W, ry = rect.y * H, rw = rect.w * W, rh = rect.h * H;
+        const pick = imageFit === 'contain' ? Math.min : Math.max;
+        const scale = pick(rw / img.width, rh / img.height);
+        const dw = img.width * scale, dh = img.height * scale;
+        const dx = rx + (rw - dw) / 2, dy = ry + (rh - dh) / 2;
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(rx, ry, rw, rh);
+        ctx.clip();
+        ctx.drawImage(img, dx, dy, dw, dh);
+        ctx.restore();
+    };
 
-        if (frontImage && frontTex.image) drawFitted(frontTex.image as HTMLImageElement, FRONT_UV_RECT);
-        if (backImage && backTex.image) drawFitted(backTex.image as HTMLImageElement, BACK_UV_RECT);
+    const fillRect = (rect: typeof FRONT_UV_RECT, color: string) => {
+        const rx = rect.x * W, ry = rect.y * H, rw = rect.w * W, rh = rect.h * H;
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.fillRect(rx, ry, rw, rh);
+        ctx.restore();
+    };
 
-        const composite = new THREE.CanvasTexture(canvas);
-        composite.colorSpace = THREE.SRGBColorSpace;
-        composite.flipY = baseMap.flipY;
-        composite.anisotropy = 16;
-        composite.needsUpdate = true;
-        return composite;
-    }, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map]);
+    // Front: use frontImage if given, otherwise a plain fill (no branding)
+    if (frontImage && frontTex.image) drawFitted(frontTex.image as HTMLImageElement, FRONT_UV_RECT);
+    else fillRect(FRONT_UV_RECT, '#0C0C0C');
+
+    // Back: same — never leave the baked-in reactbits.dev art visible
+    if (backImage && backTex.image) drawFitted(backTex.image as HTMLImageElement, BACK_UV_RECT);
+    else fillRect(BACK_UV_RECT, '#0C0C0C');
+
+    const composite = new THREE.CanvasTexture(canvas);
+    composite.colorSpace = THREE.SRGBColorSpace;
+    composite.flipY = baseMap.flipY;
+    composite.anisotropy = 16;
+    composite.needsUpdate = true;
+    return composite;
+}, [frontImage, backImage, imageFit, frontTex, backTex, materials.base.map]);
 
     const [curve] = useState(
         () =>
