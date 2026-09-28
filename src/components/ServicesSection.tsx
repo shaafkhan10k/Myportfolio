@@ -3,33 +3,33 @@ import FadeIn from './FadeIn';
 const SERVICES = [
   {
     number: '01',
-    name: 'AI & LLM Development',
+    name: 'AI & RAG Applications',
     description:
-      'RAG chatbots, multi-agent systems, and LLM integrations built with LangChain, ChromaDB, and the Anthropic and OpenAI APIs.',
+      'Plan and build retrieval and language-model features around a clear source of information and a defined user need. Tools include LangChain, ChromaDB, and Hugging Face.',
   },
   {
     number: '02',
-    name: 'Automation & Workflows',
+    name: 'Workflow Automation',
     description:
-      'n8n pipelines and API integrations that streamline content generation, reporting, and business processes for clients.',
+      'Connect forms, review steps, and email actions with n8n. Keep people involved where a decision needs human judgment.',
   },
   {
     number: '03',
     name: 'Computer Vision',
     description:
-      'Object detection and image analysis pipelines using YOLOv5 and OpenCV, from data preprocessing to model evaluation.',
+      'Build image-detection and analysis projects using YOLOv5 and OpenCV. Each project should explain its data source and limits.',
   },
   {
     number: '04',
-    name: 'Machine Learning & MLOps',
+    name: 'Web Development',
     description:
-      'End-to-end ML pipelines with Scikit-learn and PyTorch, deployed with Docker, DVC, and AWS for production use.',
+      'Create web experiences with React or WordPress based on the project needs. See the Shakir Bridal Couture project for a live WordPress example.',
   },
   {
     number: '05',
-    name: 'Game AI & Web Development',
+    name: 'Game AI',
     description:
-      'Unity-based AI systems with reinforcement learning agents, plus custom WordPress and code-based websites.',
+      'AI and reinforcement-learning systems in Unity. Currently applied in the final-year project The Rise of Machines.',
   },
 ];
 
@@ -45,7 +45,7 @@ export default function ServicesSection() {
           className="font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
           style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
-          Services
+          Areas I work in
         </h2>
       </FadeIn>
 

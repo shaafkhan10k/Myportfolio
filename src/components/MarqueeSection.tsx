@@ -1,31 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
 
+// All project images – served from /public so they work in both dev and prod
 const ALL_IMAGES = [
-  'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-  'https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif',
-  'https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
-  'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-  'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-  'https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif',
-  'https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif',
-  'https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif',
-  'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-  'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
-  'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
-  'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
-  'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
-  'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
-  'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
-  'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
-  'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
+  '/projects/kidney-stone-detection/Image1.png',
+  '/projects/kidney-stone-detection/Image2.png',
+  '/projects/kidney-stone-detection/Image3.png',
+  '/projects/the-rise-of-machines/Image1.jpeg',
+  '/projects/the-rise-of-machines/Image2.jpeg',
+  '/projects/the-rise-of-machines/Image3.jpeg',
+  '/projects/shakir-bridal-couture/Image1.png',
+  '/projects/shakir-bridal-couture/Image2.png',
+  '/projects/shakir-bridal-couture/Image3.png',
+  '/projects/cartoon-emotion-detection/Image1.png',
+  '/projects/cartoon-emotion-detection/Image2.png',
+  '/projects/cartoon-emotion-detection/Image3.png',
+  '/projects/hr-recruitment-automation/Image1.png',
+  '/projects/hr-recruitment-automation/Image2.png',
+  '/projects/hr-recruitment-automation/Image3.png',
 ];
 
-const ROW_1 = ALL_IMAGES.slice(0, 11);
-const ROW_2 = ALL_IMAGES.slice(11);
+const ROW_1 = ALL_IMAGES.slice(0, 8);
+const ROW_2 = ALL_IMAGES.slice(7);
 
 const ROW_1_TRIPLED = [...ROW_1, ...ROW_1, ...ROW_1];
 const ROW_2_TRIPLED = [...ROW_2, ...ROW_2, ...ROW_2];

@@ -1,35 +1,37 @@
+import { Helmet } from 'react-helmet-async';
 import { useEffect, useRef } from 'react';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
 import MagicBento, { BentoCardItem } from '../../components/MagicBento/MagicBento';
 import './Skills.css';
-import SocialLinks from '../../components/SocialLinks';
+import SocialFooter from '../../components/SocialFooter';
+
 const skillCards: BentoCardItem[] = [
   {
-    label: 'Game AI & RL',
-    title: 'Game AI & Reinforcement Learning',
-    description: '1. Reinforcement learning for game AI (PPO, Unity ML-Agents)\n2. NPC behavior and decision-making systems in Unity and Blender'
+    label: 'AI/ML & RAG',
+    title: 'AI, Machine Learning & RAG',
+    description: '1. Machine learning & deep learning (Python, PyTorch, TensorFlow, scikit-learn)\n2. Retrieval-Augmented Generation (RAG) pipelines\n3. NLP & Hugging Face Transformers\n4. Agent workflows (CrewAI, LangChain)'
   },
   {
-    label: 'Web Technologies',
-    title: 'Full-Stack & Web Development',
-    description: '1. AI-powered web interfaces (React, TypeScript)\n2. Full-stack web development\n3. WordPress and WooCommerce builds with payment gateway integration'
+    label: 'Computer Vision',
+    title: 'Computer Vision',
+    description: '1. Object detection & image processing (YOLOv5, OpenCV)\n2. Image analysis pipelines from preprocessing to evaluation\n3. Segmentation & DSP (Coursework)'
   },
   {
-    label: 'Agentic AI & Workflows',
-    title: 'Agentic AI & Automation',
-    description: '1. Multi-agent pipelines with LangChain and CrewAI\n2. Workflow automation and agent orchestration with n8n and Make.com\n3. RAG pipelines for retrieval-augmented LLM apps\n4. NLP and LLM application development'
+    label: 'Workflow Automation',
+    title: 'Workflow Automation',
+    description: '1. n8n workflows for form intake, task routing, and email updates\n2. Human-in-the-loop review steps\n3. API integrations and agent orchestration'
   },
   {
-    label: 'Machine Learning & NLP',
-    title: 'ML, CV & Model Development',
-    description: '1. Deep learning model training and architecture design (PyTorch)\n2. Computer vision: object detection and segmentation (OpenCV, YOLOv5)\n3. Custom LLM fine-tuning\n4. Statistical modeling and pattern recognition\n5. DSP and speech processing (coursework)'
+    label: 'Web Development',
+    title: 'Web Development',
+    description: '1. Frontend development (React, TypeScript, HTML/CSS/JS)\n2. Backend services (FastAPI, Flask)\n3. WordPress websites'
   },
   {
-    label: 'QA & Engineering',
-    title: 'Deployment & MLOps',
-    description: '1. Model deployment and serving (FastAPI)\n2. MLOps: lifecycle, monitoring, and production performance\n3. QA and testing tooling'
+    label: 'Tools & Methods',
+    title: 'Tools & Methods',
+    description: '1. Vector databases (ChromaDB, FAISS)\n2. Model serving & containerisation (FastAPI, Docker)\n3. Cloud & version control (AWS, Git/GitHub)'
   }
 ];
 
@@ -54,17 +56,27 @@ export default function Skills() {
 
   return (
     <div className="skills-page-wrapper" ref={containerRef}>
+      <Helmet>
+        <title>AI &amp; Automation Skills | Shaaf Khan</title>
+        <meta
+          name="description"
+          content="Shaaf Khan's skills in AI, machine learning, RAG pipelines, workflow automation with n8n, computer vision with YOLOv5, and web development with React and WordPress."
+        />
+        <link rel="canonical" href="https://shaafkhan.vercel.app/skills" />
+        <meta property="og:title" content="AI & Automation Skills | Shaaf Khan" />
+        <meta property="og:url" content="https://shaafkhan.vercel.app/skills" />
+      </Helmet>
       <Navbar />
 
       <div className="skills-content">
         <h1 className="hero-heading skills-header font-black uppercase tracking-tight leading-none text-[10vw] sm:text-[8vw] md:text-[6vw] mb-4">
-          My Expertise
+          AI &amp; Automation
         </h1>
         <p className="skills-header text-[#D7E2EA] font-light uppercase tracking-wide opacity-80 max-w-2xl mb-12">
-          Leveraging cutting-edge technology to craft intelligent and unforgettable digital experiences.
+          My work spans AI, automation, computer vision, and web development. Project links show where each skill has been applied. Coursework areas are labeled separately.
         </p>
 
-                <div className="skills-bento-wrapper opacity-0">
+        <div className="skills-bento-wrapper opacity-0">
           <MagicBento
             cards={skillCards}
             textAutoHide={false}
@@ -80,9 +92,7 @@ export default function Skills() {
           />
         </div>
 
-        <div className="flex justify-center mt-16 pb-4">
-          <SocialLinks iconSize={22} />
-        </div>
+        <SocialFooter />
       </div>
     </div>
   );

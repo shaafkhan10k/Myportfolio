@@ -10,6 +10,8 @@ interface Project {
   category: string;
   name: string;
   github: string;
+  role?: string;
+  description?: string;
   images: {
     col1: [string, string];
     col2: string;
@@ -19,89 +21,114 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     number: '01',
-    category: 'Client',
-    name: 'Nextlevel Studio',
-    github: 'https://github.com/shaafkhan10k',
+    category: 'Computer Vision',
+    name: 'Kidney Stone Detection',
+    role: 'Developer',
+    description: 'YOLOv5 computer-vision project including front-end and back-end work.',
+    github: 'https://github.com/anas-rajpout07/Kidney-Stone-Detection',
     images: {
       col1: [
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85',
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85',
+        '/projects/kidney-stone-detection/Image1.png',
+        '/projects/kidney-stone-detection/Image2.png',
       ],
-      col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85',
+      col2: '/projects/kidney-stone-detection/Image3.png',
     },
   },
   {
     number: '02',
-    category: 'Personal',
-    name: 'Aura Brand Identity',
-    github: 'https://github.com/shaafkhan10k',
+    category: 'Game / AI (In Progress)',
+    name: 'The Rise of Machines',
+    role: 'Developer',
+    description: 'AI-driven 3D survival game featuring AI/ML and reinforcement-learning enemy behavior.',
+    github: '',
     images: {
       col1: [
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85',
+        '/projects/the-rise-of-machines/Image1.jpeg',
+        '/projects/the-rise-of-machines/Image2.jpeg',
       ],
-      col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
+      col2: '/projects/the-rise-of-machines/Image3.jpeg',
     },
   },
   {
     number: '03',
-    category: 'Client',
-    name: 'Solaris Digital',
-    github: 'https://github.com/shaafkhan10k',
+    category: 'Web / Client',
+    name: 'Shakir Bridal Couture',
+    role: 'Web Developer',
+    description: 'WordPress website build.',
+    github: 'https://shakirbridalcouture.com/',
     images: {
       col1: [
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
-        'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85',
+        '/projects/shakir-bridal-couture/Image1.png',
+        '/projects/shakir-bridal-couture/Image2.png',
       ],
-      col2: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
+      col2: '/projects/shakir-bridal-couture/Image3.png',
     },
   },
   {
     number: '04',
-    category: 'Personal',
-    name: 'Kidney Stone Detection',
-    github: 'https://github.com/shaafkhan10k',
+    category: 'Computer Vision',
+    name: 'Cartoon Emotion Detection',
+    role: 'Developer',
+    description: 'Emotion detection system.',
+    github: 'https://github.com/shaafkhan10k/Cartoon_Emotion_Detection',
     images: {
       col1: [
-        'https://placehold.co/600x400/1a1a1a/D7E2EA?text=Screenshot',
-        'https://placehold.co/600x500/1a1a1a/D7E2EA?text=Screenshot',
+        '/projects/cartoon-emotion-detection/Image1.png',
+        '/projects/cartoon-emotion-detection/Image2.png',
       ],
-      col2: 'https://placehold.co/800x900/1a1a1a/D7E2EA?text=Screenshot',
+      col2: '/projects/cartoon-emotion-detection/Image3.png',
     },
   },
   {
     number: '05',
-    category: 'FYP',
-    name: 'The Rise of Machines',
-    github: 'https://github.com/shaafkhan10k',
+    category: 'Workflow Automation',
+    name: 'HR Recruitment Automation',
+    role: 'Automation Developer',
+    description: 'n8n workflow with Google Form input, shortlisting, email, and a human-in-the-loop voice agent.',
+    github: 'https://github.com/shaafkhan10k/N8N_Workflows/tree/main/HR%20Recruitment%20Workflow',
     images: {
       col1: [
-        'https://placehold.co/600x400/1a1a1a/D7E2EA?text=Screenshot',
-        'https://placehold.co/600x500/1a1a1a/D7E2EA?text=Screenshot',
+        '/projects/hr-recruitment-automation/Image1.png',
+        '/projects/hr-recruitment-automation/Image2.png',
       ],
-      col2: 'https://placehold.co/800x900/1a1a1a/D7E2EA?text=Screenshot',
+      col2: '/projects/hr-recruitment-automation/Image3.png',
     },
   },
 ];
 
+// This offset is used for BOTH the ScrollTrigger "start" position AND the
+// card's maxHeight — they MUST stay in sync, or the crop bug comes back.
+// It only works because the card sits flush at the top of its wrapper
+// (no vertical centering) — see ".project-item" below.
+const BASE_TOP = 72;
+const STACK_STEP = 24;
+const MAX_STACK_INDEX = 3; // stop increasing the offset after a few cards
+const BOTTOM_GAP = 32; // breathing room at the bottom of the viewport
+
+function getPinTop(index: number) {
+  return BASE_TOP + Math.min(index, MAX_STACK_INDEX) * STACK_STEP;
+}
+
 function ProjectCardInner({ project, index }: { project: Project; index: number }) {
+  const pinTop = getPinTop(index);
+
   return (
     <div
-      className="project-card w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8"
+      className="project-card w-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8 flex flex-col"
       style={{
         background: '#0C0C0C',
         transformOrigin: 'top center',
         willChange: 'transform',
-        /* offset each card down so they visually stack */
-        marginTop: `${index * 28}px`,
+        height: `calc(100dvh - ${pinTop}px - ${BOTTOM_GAP}px)`,
+        overflow: 'hidden',
       }}
     >
-      {/* Top row */}
-      <div className="flex items-center justify-between gap-4 mb-6 md:mb-10 flex-wrap">
-        <div className="flex items-center gap-4 md:gap-8">
+      {/* Header — fixed height, never shrinks */}
+      <div className="flex items-center justify-between gap-4 mb-4 md:mb-6 flex-wrap flex-shrink-0">
+        <div className="flex items-center gap-3 md:gap-6">
           <span
             className="font-black text-[#D7E2EA] leading-none"
-            style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+            style={{ fontSize: 'clamp(2.25rem, 6vw, 90px)' }}
           >
             {project.number}
           </span>
@@ -112,35 +139,41 @@ function ProjectCardInner({ project, index }: { project: Project; index: number 
             <span className="text-[#D7E2EA] font-medium uppercase tracking-wide text-lg sm:text-2xl md:text-3xl">
               {project.name}
             </span>
+            {project.description && (
+              <p className="text-[#D7E2EA]/80 text-sm mt-1 max-w-md hidden sm:block">
+                {project.role && <span className="font-semibold text-[#D7E2EA]">{project.role} &middot; </span>}
+                {project.description}
+              </p>
+            )}
           </div>
         </div>
-        <GitHubButton href={project.github} />
+        <GitHubButton href={project.github} label={project.github?.includes('github.com') ? 'GitHub' : 'Website'} />
       </div>
 
-      {/* Image grid */}
-      <div className="flex gap-3">
-        <div className="flex flex-col gap-3" style={{ width: '40%' }}>
+      {/* Image grid — flexes to fill whatever height remains under the
+          header. flex-1 + min-h-0 lets it shrink instead of overflowing
+          the card's maxHeight. */}
+      <div className="flex gap-3 flex-1 min-h-0">
+        <div className="flex flex-col gap-3 h-full min-h-0" style={{ width: '40%' }}>
           <img
             src={project.images.col1[0]}
             alt={`${project.name} preview 1`}
             loading="lazy"
-            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-            style={{ height: 'clamp(130px, 16vw, 230px)' }}
+            className="w-full flex-1 min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
           <img
             src={project.images.col1[1]}
             alt={`${project.name} preview 2`}
             loading="lazy"
-            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-            style={{ height: 'clamp(160px, 22vw, 340px)' }}
+            className="w-full flex-[1.4] min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>
-        <div style={{ width: '60%' }}>
+        <div className="h-full min-h-0" style={{ width: '60%' }}>
           <img
             src={project.images.col2}
             alt={`${project.name} main preview`}
             loading="lazy"
-            className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            className="w-full h-full object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>
       </div>
@@ -155,7 +188,6 @@ export default function ProjectsSection() {
     const section = sectionRef.current;
     if (!section) return;
 
-    // Wait a tick for ScrollSmoother to be ready
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray<HTMLElement>('.project-item');
 
@@ -163,17 +195,17 @@ export default function ProjectsSection() {
         const card = item.querySelector<HTMLElement>('.project-card');
         if (!card) return;
 
-        // Pin each item so the card stacks on top of the previous ones
+        const pinTop = getPinTop(i);
+
         ScrollTrigger.create({
           trigger: item,
-          start: `top ${96 + i * 28}px`, // 96px = ~top-24 in px
+          start: `top ${pinTop}px`,
           endTrigger: section,
           end: 'bottom bottom',
           pin: card,
           pinSpacing: false,
         });
 
-        // Scale this card down as the NEXT card slides over it
         const targetScale = 1 - (items.length - 1 - i) * 0.03;
         if (i < items.length - 1) {
           gsap.fromTo(
@@ -185,13 +217,27 @@ export default function ProjectsSection() {
               scrollTrigger: {
                 trigger: items[i + 1],
                 start: 'top bottom',
-                end: `top ${96 + i * 28}px`,
+                end: `top ${pinTop}px`,
                 scrub: true,
               },
             }
           );
         }
       });
+
+      // Safety net: recalc pin positions once lazy images have actually
+      // loaded, in case anything shifts layout after the first pass.
+      const imgs = Array.from(section.querySelectorAll('img'));
+      Promise.all(
+        imgs.map(img =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise<void>(resolve => {
+                img.addEventListener('load', () => resolve(), { once: true });
+                img.addEventListener('error', () => resolve(), { once: true });
+              })
+        )
+      ).then(() => ScrollTrigger.refresh());
     }, section);
 
     return () => ctx.revert();
@@ -211,24 +257,23 @@ export default function ProjectsSection() {
         Project
       </h2>
 
-      {/* Each item wrapper gives ScrollTrigger a trigger element with real height */}
       <div className="max-w-6xl mx-auto">
         {PROJECTS.map((project, i) => (
           <div
             key={project.number}
             className="project-item"
-            /* 85vh height so each card occupies a screen before the next pin triggers */
-            style={{ height: '85vh', display: 'flex', alignItems: 'center' }}
+            /* NOTE: no flex/alignItems centering here anymore. The card
+               must sit flush at the top of this box so its on-screen
+               pinned position is exactly `pinTop` — that's what makes
+               the maxHeight calc in ProjectCardInner actually correct. */
+            style={{ height: '75vh', position: 'relative' }}
           >
             <ProjectCardInner project={project} index={i} />
           </div>
         ))}
       </div>
 
-      {/* Extra scroll space so last card stays visible */}
-      <div style={{ height: '40vh' }} />
-
-   
+      <div style={{ height: '30vh' }} />
     </section>
   );
 }

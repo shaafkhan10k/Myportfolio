@@ -19,9 +19,9 @@ export default function HeroSection() {
       {/* Mobile: no top margin so text is near the top. Desktop: push down with margin */}
       <div className="mt-2 sm:mt-20 md:mt-24 px-6 sm:px-16 md:px-20 z-20 relative">
         <FadeIn delay={0.15} y={40} className="overflow-hidden">
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none w-full text-[21vw] sm:text-[12.5vw] md:text-[13.5vw] lg:text-[14vw] text-center sm:text-left">
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none w-full text-[21vw] sm:text-[12vw] md:text-[12.5vw] lg:text-[12vw] text-center sm:text-left">
             <span className="block sm:inline">Hi, i&apos;m </span>
-            <span className="block sm:inline">shaaf</span>
+            <span className="block sm:inline">shaaf khan</span>
           </h1>
         </FadeIn>
 
@@ -29,13 +29,14 @@ export default function HeroSection() {
         <div className="hidden sm:flex items-center justify-between mt-6">
           <FadeIn delay={0.35} y={20}>
             <p
-              className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[280px]"
+              className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[320px]"
               style={{ fontSize: 'clamp(0.85rem, 1.4vw, 1.5rem)' }}
             >
-              an ai engineer specializing in automation, agents, and game ai
+              an ai engineer specializing in automation, agents, and computer vision
             </p>
           </FadeIn>
-          <FadeIn delay={0.5} y={20}>
+          <FadeIn delay={0.5} y={20} className="flex gap-4">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-6 py-3 text-sm transition-colors duration-200 hover:bg-[#D7E2EA]/10">Download Résumé</a>
             <ContactButton />
           </FadeIn>
         </div>
@@ -43,10 +44,10 @@ export default function HeroSection() {
         {/* Mobile Tagline (Hidden on desktop) */}
         <FadeIn delay={0.35} y={20} className="mt-3 sm:hidden flex justify-center">
           <p
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[260px] text-center"
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[280px] text-center"
             style={{ fontSize: 'clamp(0.85rem, 3.5vw, 1.2rem)' }}
           >
-            an ai engineer specializing in automation, agents, and game ai
+            an ai engineer specializing in automation, agents, and computer vision
           </p>
         </FadeIn>
       </div>
@@ -116,8 +117,11 @@ export default function HeroSection() {
       </div>
 
       {/* BOTTOM ROW: Mobile Contact Button (Hidden on desktop) */}
-      <div className="flex justify-center items-end pb-5 px-6 relative z-20 mt-auto sm:hidden">
+      <div className="flex flex-col gap-3 justify-center items-center pb-5 px-6 relative z-20 mt-auto sm:hidden">
         <FadeIn delay={0.5} y={20}>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 text-xs transition-colors duration-200 hover:bg-[#D7E2EA]/10">Download Résumé</a>
+        </FadeIn>
+        <FadeIn delay={0.6} y={20}>
           <ContactButton />
         </FadeIn>
       </div>

@@ -3,7 +3,7 @@ import AnimatedText from './AnimatedText';
 import ContactButton from './ContactButton';
 
 const ABOUT_TEXT =
-  "I'm a final-year AI student building RAG chatbots, automation pipelines, and game AI, i focus on LLMs, computer vision, and multi-agent systems, i truly enjoy turning research and messy client requirements into systems that actually ship. Let's build something intelligent together!";
+  "I'm a final-year AI student building RAG applications, n8n automation workflows, and computer-vision projects. I focus on connecting AI, automation, and web development to problems people can describe and inspect. Based in Pakistan, open to roles in Islamabad and Rawalpindi, and remote freelance projects with international clients.";
 
 export default function AboutSection() {
   return (
@@ -75,7 +75,7 @@ export default function AboutSection() {
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
-            About me
+            A little about my work
           </h2>
         </FadeIn>
 

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
 import Antigravity from '../../components/Antigravity/Antigravity';
 import Lanyard from '../../components/Lanyard/Lanyard';
 import TextLoop from '../../components/TextLoop/TextLoop';
-import SocialLinks from '../../components/SocialLinks';
+import SocialFooter from '../../components/SocialFooter';
 import './About.css';
 
 interface InfoCardProps {
@@ -87,6 +88,16 @@ export default function About() {
 
   return (
     <div className="about-page-wrapper" ref={containerRef}>
+      <Helmet>
+        <title>About Shaaf Khan | AI Engineer in Pakistan</title>
+        <meta
+          name="description"
+          content="Shaaf Khan is a final-year AI student at NUML, Pakistan. Freelance AI & web developer since 2023, ML Engineer intern, and front-end instructor. Open to AI/automation roles in Islamabad/Rawalpindi."
+        />
+        <link rel="canonical" href="https://shaafkhan.vercel.app/about" />
+        <meta property="og:title" content="About Shaaf Khan | AI Engineer in Pakistan" />
+        <meta property="og:url" content="https://shaafkhan.vercel.app/about" />
+      </Helmet>
       <Navbar />
 
       {/* Ambient particle field */}
@@ -111,7 +122,7 @@ export default function About() {
       </div>
 
       <div className="about-content">
-        <h1 className="hero-heading anime-element">Behind the Creator</h1>
+        <h1 className="hero-heading anime-element">About Shaaf Khan</h1>
 
         {/* ── Outer 2-col: Lanyard Card | Content Cards ── */}
         <div className="about-main-grid">
@@ -133,40 +144,49 @@ export default function About() {
             {/* Short Bio (full-width) */}
             <InfoCard label="Short Bio" tag="Overview" fullWidth>
               <p>
-                Hi, I'm Shaaf — an AI Engineer and 3D Creator based in Pakistan. I specialize
-                in crafting intelligent agents, autonomous pipelines, and building immersive
-                digital experiences that bridge the gap between design and complex engineering.
+                I'm Shaaf, a final-year Artificial Intelligence student at NUML, expected to
+                graduate in 2027. I work across AI, automation, computer vision, and web
+                development. I'm based in Pakistan and open to roles in Islamabad and
+                Rawalpindi, as well as remote freelance projects with international clients.
               </p>
             </InfoCard>
 
             {/* Core Skills */}
-            <InfoCard label="Core Skills" tag="Stack">
+            <InfoCard label="What I Work On" tag="Focus">
               <ul className="about-skills-list">
-                <li><span className="skill-bullet">✦</span> Artificial Intelligence & ML</li>
-                <li><span className="skill-bullet">✦</span> Frontend — React, Three.js</li>
-                <li><span className="skill-bullet">✦</span> 3D Modeling & Animation</li>
-                <li><span className="skill-bullet">✦</span> Workflow Automation</li>
-                <li><span className="skill-bullet">✦</span> Intelligent Agent Systems</li>
+                <li><span className="skill-bullet">✦</span> RAG &amp; Agent Workflows</li>
+                <li><span className="skill-bullet">✦</span> n8n Automation Pipelines</li>
+                <li><span className="skill-bullet">✦</span> Computer Vision (YOLOv5, OpenCV)</li>
+                <li><span className="skill-bullet">✦</span> Web Development (React, WordPress)</li>
+                <li><span className="skill-bullet">✦</span> AI/ML (PyTorch, scikit-learn)</li>
               </ul>
             </InfoCard>
 
             {/* How I Work */}
             <InfoCard label="How I Work" tag="Process">
               <p>
-                Collaborative and iterative. I start by deeply understanding the core problem,
-                move into rapid prototyping, then refine until the result is both functionally
-                robust and visually stunning.
+                I start by understanding the problem, then build a small version that can be
+                tested. From there I refine the parts that matter to the person using it. For
+                AI projects, I also make the current limits clear.
               </p>
             </InfoCard>
 
             {/* Experience */}
             <InfoCard label="Experience" tag="History">
-              <p>
-                Developed custom AI models, RAG pipelines, and deployed highly interactive
-                web applications for forward-thinking clients worldwide.
+              <p className="mb-2">
+                <strong>Freelance AI & Web Developer</strong> (2023–Present)<br/>
+                Developed custom AI models, RAG pipelines, and automated workflows.
               </p>
-              <div className="about-action-row">
-                <a href="#contact" className="about-link-action">
+              <p className="mb-2">
+                <strong>ML Engineer Intern</strong> (May–June 2026)<br/>
+                Built computer vision and machine learning solutions.
+              </p>
+              <p>
+                <strong>Front-End Development Instructor</strong> (2021–2023)<br/>
+                Taught modern web development fundamentals.
+              </p>
+              <div className="about-action-row mt-4">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="about-link-action">
                   <span>View full resume</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -176,29 +196,46 @@ export default function About() {
               </div>
             </InfoCard>
 
-            {/* Passions & Values */}
-            <InfoCard label="Passions & Values" tag="Drive">
+            {/* Education */}
+            <InfoCard label="Education" tag="Academic">
               <p>
-                Driven by the belief that technology should empower human creativity. I thrive
-                on pushing the boundaries of what's possible on the modern web.
+                <strong>B.S. Artificial Intelligence</strong><br/>
+                NUML, Expected 2027
+              </p>
+            </InfoCard>
+
+            {/* Passions & Values */}
+            <InfoCard label="What I'm Open To" tag="Availability">
+              <p>
+                AI and automation roles in Islamabad and Rawalpindi, and remote freelance
+                projects with international clients. I'm interested in systems that connect a
+                clear problem to a useful result.
               </p>
             </InfoCard>
 
             {/* Fun Facts */}
-            <InfoCard label="Fun Facts" tag="Personal">
-              <p>
-                When not training neural nets or coding shaders, I'm experimenting with
-                generative art, exploring interactive 3D physics, or hunting for the ultimate coffee.
+            <InfoCard label="Download Résumé" tag="CV">
+              <p style={{ marginBottom: '0.75rem' }}>
+                My résumé lists verified experience, education, and project work.
               </p>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="about-connect-btn">
+                <span>Download résumé (PDF)</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </a>
             </InfoCard>
 
             {/* Let's Connect */}
-            <InfoCard label="Let's Connect" tag="Available">
+            <InfoCard label="Contact" tag="Available">
               <p style={{ marginBottom: '1rem' }}>
-                Always open to new projects, ambitious ideas, and opportunities.
+                Open to AI/automation roles in Islamabad/Rawalpindi and remote freelance
+                projects with international clients.
               </p>
-              <a href="mailto:hello@example.com" className="about-connect-btn">
-                <span>hello@example.com</span>
+              <a href="mailto:shaafkhan10k@gmail.com" className="about-connect-btn">
+                <span>shaafkhan10k@gmail.com</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="7" y1="17" x2="17" y2="7"></line>
                   <polyline points="7 7 17 7 17 17"></polyline>
@@ -214,7 +251,7 @@ export default function About() {
       {/* ── TextLoop Wave Banner ── */}
       <div className="about-textloop-section anime-element">
         <TextLoop
-          text="AI Engineer ✦ 3D Creator ✦ Automation ✦ Shaaf"
+          text="AI Engineer ✦ Automation ✦ Computer Vision ✦ Shaaf Khan"
           shape="wave"
           speed={80}
           direction="forward"
@@ -233,9 +270,7 @@ export default function About() {
       </div>
 
       {/* Social Links */}
-      <div className="flex justify-center py-12">
-        <SocialLinks iconSize={22} className="gap-8 sm:gap-12" />
-      </div>
+      <SocialFooter />
     </div>
   );
 }

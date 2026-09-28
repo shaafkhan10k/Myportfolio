@@ -60,11 +60,13 @@
   transition: color 0.3s ease;
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
   color: #D7E2EA;
   font-size: 1.2rem;
   font-family: 'Kanit', sans-serif;
@@ -72,13 +74,14 @@
   transition: border-color 0.3s ease;
 }
 
-.form-input:focus, .form-textarea:focus {
+.form-input:focus,
+.form-textarea:focus {
   outline: none;
   border-bottom-color: #B600A8;
 }
 
-.form-input:focus + .focus-border, 
-.form-textarea:focus + .focus-border {
+.form-input:focus+.focus-border,
+.form-textarea:focus+.focus-border {
   width: 100%;
 }
 
@@ -91,11 +94,36 @@
   height: 2px;
   background: linear-gradient(90deg, #B600A8, #BE4C00);
   transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
 }
 
 .form-textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+.field-error {
+  color: #FCA5A5;
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.form-feedback {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.form-feedback-success {
+  color: #86EFAC;
+}
+
+.form-feedback-error {
+  color: #FCA5A5;
 }
 
 .submit-button {
@@ -116,6 +144,22 @@
   font-size: 1.1rem;
   position: relative;
   overflow: hidden;
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  filter: brightness(1.12);
+  box-shadow: 0px 6px 14px rgba(181, 1, 167, 0.3), inset 4px 4px 12px #7721B1;
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid #D7E2EA;
+  outline-offset: 4px;
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  filter: saturate(0.7);
 }
 
 .submit-button span {
@@ -146,4 +190,15 @@
   background: #18011F;
   bottom: -10%;
   right: -10%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .form-label,
+  .form-input,
+  .form-textarea,
+  .focus-border,
+  .submit-button {
+    transition: none;
+  }
 }
