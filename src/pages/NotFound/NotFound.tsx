@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
@@ -49,6 +50,10 @@ export default function NotFound() {
 
   return (
     <div className="notfound-page-wrapper" ref={containerRef}>
+      <Helmet>
+        <title>Page not found | Shaaf Khan</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
       <div className="absolute top-0 left-0 w-full z-50">
         <Navbar />
       </div>

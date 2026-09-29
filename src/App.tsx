@@ -1,10 +1,12 @@
-import { useLayoutEffect } from 'react';
+import { lazy, Suspense, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
-import Skills from './pages/Skills';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+
+// Route-level code splitting: keeps three.js / R3F (About page) out of the home bundle.
+const About = lazy(() => import('./pages/About'));
+const Skills = lazy(() => import('./pages/Skills'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
@@ -26,6 +28,7 @@ function App() {
     <Router>
       <div id="smooth-wrapper" style={{ background: '#0C0C0C', overflowX: 'clip', minHeight: '100vh' }}>
         <div id="smooth-content">
+          <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -33,6 +36,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
         </div>
       </div>
     </Router>

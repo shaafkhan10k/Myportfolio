@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../../components/Seo';
 import { useForm, ValidationError } from '@formspree/react';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
@@ -126,16 +126,7 @@ export default function Contact() {
 
   return (
     <div className="contact-page-wrapper" ref={containerRef}>
-      <Helmet>
-        <title>Contact Shaaf Khan | AI Engineer</title>
-        <meta
-          name="description"
-          content="Contact Shaaf Khan for AI, automation, computer-vision, or web projects. Also open to AI and automation roles in Islamabad and Rawalpindi."
-        />
-        <link rel="canonical" href="https://shaafkhan.vercel.app/contact" />
-        <meta property="og:title" content="Contact Shaaf Khan | AI Engineer" />
-        <meta property="og:url" content="https://shaafkhan.vercel.app/contact" />
-      </Helmet>
+      <Seo path="/contact" />
 
       <Navbar />
 

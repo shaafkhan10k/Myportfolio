@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../../components/Seo';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
 import Navbar from '../../components/Navbar';
@@ -88,16 +88,7 @@ export default function About() {
 
   return (
     <div className="about-page-wrapper" ref={containerRef}>
-      <Helmet>
-        <title>About Shaaf Khan | AI Engineer in Pakistan</title>
-        <meta
-          name="description"
-          content="Shaaf Khan is a final-year AI student at NUML, Pakistan. Freelance AI & web developer since 2023, ML Engineer intern, and front-end instructor. Open to AI/automation roles in Islamabad/Rawalpindi."
-        />
-        <link rel="canonical" href="https://shaafkhan.vercel.app/about" />
-        <meta property="og:title" content="About Shaaf Khan | AI Engineer in Pakistan" />
-        <meta property="og:url" content="https://shaafkhan.vercel.app/about" />
-      </Helmet>
+      <Seo path="/about" />
       <Navbar />
 
       {/* Ambient particle field */}

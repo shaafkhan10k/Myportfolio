@@ -28,10 +28,10 @@ const PROJECTS: Project[] = [
     github: 'https://github.com/anas-rajpout07/Kidney-Stone-Detection',
     images: {
       col1: [
-        '/projects/kidney-stone-detection/Image1.png',
-        '/projects/kidney-stone-detection/Image2.png',
+        '/projects/kidney-stone-detection/Image1.webp',
+        '/projects/kidney-stone-detection/Image2.webp',
       ],
-      col2: '/projects/kidney-stone-detection/Image3.png',
+      col2: '/projects/kidney-stone-detection/Image3.webp',
     },
   },
   {
@@ -43,10 +43,10 @@ const PROJECTS: Project[] = [
     github: '',
     images: {
       col1: [
-        '/projects/the-rise-of-machines/Image1.jpeg',
-        '/projects/the-rise-of-machines/Image2.jpeg',
+        '/projects/the-rise-of-machines/Image1.webp',
+        '/projects/the-rise-of-machines/Image2.webp',
       ],
-      col2: '/projects/the-rise-of-machines/Image3.jpeg',
+      col2: '/projects/the-rise-of-machines/Image3.webp',
     },
   },
   {
@@ -58,10 +58,10 @@ const PROJECTS: Project[] = [
     github: 'https://shakirbridalcouture.com/',
     images: {
       col1: [
-        '/projects/shakir-bridal-couture/Image1.png',
-        '/projects/shakir-bridal-couture/Image2.png',
+        '/projects/shakir-bridal-couture/Image1.webp',
+        '/projects/shakir-bridal-couture/Image2.webp',
       ],
-      col2: '/projects/shakir-bridal-couture/Image3.png',
+      col2: '/projects/shakir-bridal-couture/Image3.webp',
     },
   },
   {
@@ -73,10 +73,10 @@ const PROJECTS: Project[] = [
     github: 'https://github.com/shaafkhan10k/Cartoon_Emotion_Detection',
     images: {
       col1: [
-        '/projects/cartoon-emotion-detection/Image1.png',
-        '/projects/cartoon-emotion-detection/Image2.png',
+        '/projects/cartoon-emotion-detection/Image1.webp',
+        '/projects/cartoon-emotion-detection/Image2.webp',
       ],
-      col2: '/projects/cartoon-emotion-detection/Image3.png',
+      col2: '/projects/cartoon-emotion-detection/Image3.webp',
     },
   },
   {
@@ -88,10 +88,10 @@ const PROJECTS: Project[] = [
     github: 'https://github.com/shaafkhan10k/N8N_Workflows/tree/main/HR%20Recruitment%20Workflow',
     images: {
       col1: [
-        '/projects/hr-recruitment-automation/Image1.png',
-        '/projects/hr-recruitment-automation/Image2.png',
+        '/projects/hr-recruitment-automation/Image1.webp',
+        '/projects/hr-recruitment-automation/Image2.webp',
       ],
-      col2: '/projects/hr-recruitment-automation/Image3.png',
+      col2: '/projects/hr-recruitment-automation/Image3.webp',
     },
   },
 ];
@@ -159,12 +159,14 @@ function ProjectCardInner({ project, index }: { project: Project; index: number 
             src={project.images.col1[0]}
             alt={`${project.name} preview 1`}
             loading="lazy"
+            decoding="async"
             className="w-full flex-1 min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
           <img
             src={project.images.col1[1]}
             alt={`${project.name} preview 2`}
             loading="lazy"
+            decoding="async"
             className="w-full flex-[1.4] min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>
@@ -173,6 +175,7 @@ function ProjectCardInner({ project, index }: { project: Project; index: number 
             src={project.images.col2}
             alt={`${project.name} main preview`}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>

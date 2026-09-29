@@ -2,22 +2,28 @@ import { useEffect, useRef, useState } from 'react';
 
 // All project images – served from /public so they work in both dev and prod
 const ALL_IMAGES = [
-  '/projects/kidney-stone-detection/Image1.png',
-  '/projects/kidney-stone-detection/Image2.png',
-  '/projects/kidney-stone-detection/Image3.png',
-  '/projects/the-rise-of-machines/Image1.jpeg',
-  '/projects/the-rise-of-machines/Image2.jpeg',
-  '/projects/the-rise-of-machines/Image3.jpeg',
-  '/projects/shakir-bridal-couture/Image1.png',
-  '/projects/shakir-bridal-couture/Image2.png',
-  '/projects/shakir-bridal-couture/Image3.png',
-  '/projects/cartoon-emotion-detection/Image1.png',
-  '/projects/cartoon-emotion-detection/Image2.png',
-  '/projects/cartoon-emotion-detection/Image3.png',
-  '/projects/hr-recruitment-automation/Image1.png',
-  '/projects/hr-recruitment-automation/Image2.png',
-  '/projects/hr-recruitment-automation/Image3.png',
+  '/projects/kidney-stone-detection/Image1.webp',
+  '/projects/kidney-stone-detection/Image2.webp',
+  '/projects/kidney-stone-detection/Image3.webp',
+  '/projects/the-rise-of-machines/Image1.webp',
+  '/projects/the-rise-of-machines/Image2.webp',
+  '/projects/the-rise-of-machines/Image3.webp',
+  '/projects/shakir-bridal-couture/Image1.webp',
+  '/projects/shakir-bridal-couture/Image2.webp',
+  '/projects/shakir-bridal-couture/Image3.webp',
+  '/projects/cartoon-emotion-detection/Image1.webp',
+  '/projects/cartoon-emotion-detection/Image2.webp',
+  '/projects/cartoon-emotion-detection/Image3.webp',
+  '/projects/hr-recruitment-automation/Image1.webp',
+  '/projects/hr-recruitment-automation/Image2.webp',
+  '/projects/hr-recruitment-automation/Image3.webp',
 ];
+
+function altFromSrc(src: string): string {
+  const slug = src.split('/')[2] ?? 'project';
+  const name = slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  return `${name} project screenshot`;
+}
 
 const ROW_1 = ALL_IMAGES.slice(0, 8);
 const ROW_2 = ALL_IMAGES.slice(7);
@@ -49,8 +55,11 @@ function Row({
           <img
             key={`${src}-${i}`}
             src={src}
-            alt=""
+            alt={altFromSrc(src)}
             loading="lazy"
+            decoding="async"
+            width={420}
+            height={270}
             className="rounded-2xl object-cover flex-shrink-0"
             style={{ width: '420px', height: '270px' }}
           />

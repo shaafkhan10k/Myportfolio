@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from '../../components/Seo';
 import { useEffect, useRef } from 'react';
 // @ts-ignore
 import anime from 'animejs/lib/anime.es.js';
@@ -56,16 +56,7 @@ export default function Skills() {
 
   return (
     <div className="skills-page-wrapper" ref={containerRef}>
-      <Helmet>
-        <title>AI &amp; Automation Skills | Shaaf Khan</title>
-        <meta
-          name="description"
-          content="Shaaf Khan's skills in AI, machine learning, RAG pipelines, workflow automation with n8n, computer vision with YOLOv5, and web development with React and WordPress."
-        />
-        <link rel="canonical" href="https://shaafkhan.vercel.app/skills" />
-        <meta property="og:title" content="AI & Automation Skills | Shaaf Khan" />
-        <meta property="og:url" content="https://shaafkhan.vercel.app/skills" />
-      </Helmet>
+      <Seo path="/skills" />
       <Navbar />
 
       <div className="skills-content">

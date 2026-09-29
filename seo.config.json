@@ -1,0 +1,23 @@
+{
+  "siteUrl": "https://shaafkhan.vercel.app",
+  "siteName": "Shaaf Khan",
+  "ogImage": "/og-image.png",
+  "routes": {
+    "/": {
+      "title": "Shaaf Khan | AI Engineer, Automation & Computer Vision",
+      "description": "AI engineer building RAG apps, n8n automation and computer-vision projects. Open to roles in Islamabad and remote freelance work."
+    },
+    "/about": {
+      "title": "About Shaaf Khan | AI Engineer in Pakistan",
+      "description": "Final-year AI student at NUML, freelance AI and web developer since 2023. Open to AI and automation roles in Islamabad/Rawalpindi."
+    },
+    "/skills": {
+      "title": "AI & Automation Skills | Shaaf Khan",
+      "description": "Skills in RAG pipelines, n8n workflow automation, YOLOv5 computer vision, PyTorch, and web development with React and WordPress."
+    },
+    "/contact": {
+      "title": "Contact Shaaf Khan | AI Engineer",
+      "description": "Contact Shaaf Khan for AI, automation, computer-vision or web projects, or for AI roles in Islamabad and Rawalpindi."
+    }
+  }
+}
