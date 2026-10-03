@@ -42,14 +42,15 @@ interface CharacterProps {
 
 function Character({ char, progress, range }: CharacterProps) {
   const opacity = useTransform(progress, range, [0.2, 1]);
+  const displayChar = char === ' ' ? '\u00A0' : char;
 
   return (
-    <span style={{ position: 'relative', display: 'inline-block' }}>
-      <span style={{ visibility: 'hidden' }}>{char}</span>
+    <span style={{ position: 'relative', display: 'inline-block', whiteSpace: 'pre' }}>
+      <span style={{ visibility: 'hidden' }}>{displayChar}</span>
       <motion.span
         style={{ position: 'absolute', left: 0, top: 0, opacity }}
       >
-        {char}
+        {displayChar}
       </motion.span>
     </span>
   );

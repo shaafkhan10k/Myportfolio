@@ -153,30 +153,30 @@ function ProjectCardInner({ project, index }: { project: Project; index: number 
       {/* Image grid — flexes to fill whatever height remains under the
           header. flex-1 + min-h-0 lets it shrink instead of overflowing
           the card's maxHeight. */}
-      <div className="flex gap-3 flex-1 min-h-0">
-        <div className="flex flex-col gap-3 h-full min-h-0" style={{ width: '40%' }}>
+      <div className="flex flex-col md:flex-row gap-3 flex-1 min-h-0">
+        <div className="flex flex-row md:flex-col gap-3 md:h-full min-h-0 w-full md:w-[40%] flex-[0.5] md:flex-none">
           <img
             src={project.images.col1[0]}
             alt={`${project.name} preview 1`}
             loading="lazy"
             decoding="async"
-            className="w-full flex-1 min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
+            className="w-1/2 md:w-full flex-1 min-h-0 object-cover rounded-[20px] sm:rounded-[36px] md:rounded-[44px]"
           />
           <img
             src={project.images.col1[1]}
             alt={`${project.name} preview 2`}
             loading="lazy"
             decoding="async"
-            className="w-full flex-[1.4] min-h-0 object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
+            className="w-1/2 md:w-full flex-[1.4] min-h-0 object-cover rounded-[20px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>
-        <div className="h-full min-h-0" style={{ width: '60%' }}>
+        <div className="md:h-full min-h-0 w-full md:w-[60%] flex-1">
           <img
             src={project.images.col2}
             alt={`${project.name} main preview`}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover rounded-[28px] sm:rounded-[36px] md:rounded-[44px]"
+            className="w-full h-full object-cover rounded-[20px] sm:rounded-[36px] md:rounded-[44px]"
           />
         </div>
       </div>
